@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/fetcher', {
     useNewUrlParser: true,
     useCreateIndex: true,
+    useUnifiedTopology: true
 });
 
 let repoSchema = mongoose.Schema({
@@ -22,6 +23,9 @@ let repoSchema = mongoose.Schema({
             unique: false
         },
         avatar_url: {
+            type: String
+        },
+        html_url: {
             type: String
         },
         url: {
